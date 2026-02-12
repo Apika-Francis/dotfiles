@@ -30,7 +30,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
-        "visualizerType": "linear",
+        "visualizerType": "none",
         "volumeFeedback": false,
         "volumeOverdrive": true,
         "volumeStep": 5
@@ -522,7 +522,7 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Cantarell",
+        "fontDefault": "Noto Sans",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono NF",
         "fontFixedScale": 1,

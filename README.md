@@ -74,10 +74,10 @@ Clone the repo to your home directory and create symlinks.
 
 ```bash
 # 1. Clone to ~/.dotfiles
-git clone [https://github.com/Apika-Francis/dotfiles.git](https://github.com/Apika-Francis/dotfiles.git) ~/.dotfiles
+git clone https://github.com/Apika-Francis/dotfiles.git ~/dotfiles
 
 # 2. Enter directory
-cd ~/.dotfiles
+cd ~/dotfiles
 
 # 3. Symlink configs
 stow .
