@@ -292,7 +292,7 @@
         "animationDisabled": true,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/fapika/Pictures/wbfe94bsd3hg1.jpeg",
+        "avatarImage": "/home/fapika/Pictures/file.jpg",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -325,7 +325,7 @@
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": false,
-        "lockScreenBlur": 0,
+        "lockScreenBlur": 0.09,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
         ],
@@ -378,7 +378,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
