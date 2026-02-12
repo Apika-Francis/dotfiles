@@ -1,0 +1,126 @@
+prefer-no-csd
+
+input {
+    keyboard {
+        repeat-delay 200
+        repeat-rate 35
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+output "eDP-1" {
+    mode "1366x768@60.004"
+    scale 1.0
+}
+
+layout {
+    gaps 4
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.5  // Half screen
+        proportion 1.0  // Full width (Maximize)
+    }
+    default-column-width { proportion 1.0;}
+
+
+    focus-ring {
+        width 0.1
+        active-color "#3b4261"
+        inactive-color "#16161e"
+    }
+}
+
+spawn-at-startup "/usr/libexec/xdg-desktop-portal-wlr"
+// Launch Noctalia using the linked name
+spawn-at-startup "qs" "-c" "noctalia"
+
+window-rule {
+    match app-id=r#"firefox$"#
+    match app-id=r#"kitty$"#
+    //open-maximized true
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Shift+I { spawn "bash" "-c" "BEMOJI_PICKER_CMD='fuzzel -d' bemoji -t"; }
+    // Screen recorder toggle (start/stop)
+    Mod+Shift+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "toggle"; }
+
+    // Explicitly start recording
+    Mod+Ctrl+Shift+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "start"; }
+
+    // Explicitly stop recording
+    Mod+Alt+Shift+R { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:screen-recorder" "stop"; }
+
+    // Screenshot with annotation (interactive selection)
+    Mod+S { spawn-sh "grim -g \"$(slurp)\" - | swappy -f -"; }
+
+    // Screenshot region and save directly (no annotation)
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png && notify-send 'Screenshot saved' -i camera-photo"; }
+
+    // Screenshot full screen
+    Mod+Ctrl+S { spawn-sh "grim ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png && notify-send 'Screenshot saved' -i camera-photo"; }
+
+    // Screenshot current window
+    Mod+Alt+S { spawn-sh "grim -g \"$(slurp -w)\" ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png && notify-send 'Screenshot saved' -i camera-photo"; }
+
+    // Your Terminal: Kitty
+    Mod+Return { spawn "kitty"; }
+    Mod+D { spawn "fuzzel"; }
+    Mod+Q { close-window; }
+    Mod+O { toggle-overview; }
+
+    // Laptop Media Keys (Pipewire/Fedora default)
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+
+    // Media Playback Controls
+    XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+    XF86AudioNext  { spawn "playerctl" "next"; }
+    XF86AudioPrev  { spawn "playerctl" "previous"; }
+
+    // Brightness
+    XF86MonBrightnessUp   { spawn "brightnessctl" "set" "+10%"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
+
+    // Navigation
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+
+    Mod+Ctrl+H { move-column-left; }
+    Mod+Ctrl+J { move-window-down; }
+    Mod+Ctrl+K { move-window-up; }
+    Mod+Ctrl+L { move-column-right; }
+
+    // Workspaces
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+
+    Mod+F { switch-preset-column-width;}
+    Mod+Shift+F { fullscreen-window; }
+    //Mod+S { screenshot; }
+
+    Mod+Shift+E { quit; }
+}
+
+include "./noctalia.kdl"
+
