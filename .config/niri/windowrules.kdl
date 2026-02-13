@@ -1,0 +1,102 @@
+// ====================
+// Window Rules
+// ====================
+
+// Base rule: Rounded corners for all windows
+window-rule {
+    geometry-corner-radius 1
+    clip-to-geometry true
+}
+
+// Firefox - slight transparency
+window-rule {
+    match app-id=r#"^org\.mozilla\.firefox$"#
+    opacity 0.95
+}
+
+// Firefox - dim when not focused
+window-rule {
+    match app-id=r#"^org\.mozilla\.firefox$"# is-focused=false
+    opacity 0.90
+}
+
+// Firefox Picture-in-Picture - floating
+window-rule {
+    match app-id=r#"^org\.mozilla\.firefox$"# title="Picture-in-Picture"
+    open-floating true
+}
+
+// Kitty - transparency with focus/unfocus
+window-rule {
+    match app-id=r#"^kitty$"#
+    opacity 0.95
+}
+
+window-rule {
+    match app-id=r#"^kitty$"# is-focused=false
+    opacity 0.90
+}
+
+// Floating kitty (for quick terminal)
+window-rule {
+    match app-id=r#"^floating-kitty$"#
+    open-floating true
+    opacity 0.95
+    default-column-width { fixed 900; }
+    default-window-height { fixed 600; }
+}
+
+// Nvim in kitty - slightly more opaque for readability
+window-rule {
+    match app-id=r#"^kitty$"# title=r#"nvim"#
+    opacity 0.98
+}
+
+// File managers - transparency
+window-rule {
+    match app-id=r#"^thunar$"#
+    opacity 0.95
+}
+
+window-rule {
+    match app-id=r#"^thunar$"# is-focused=false
+    opacity 0.90
+}
+
+// Loupe (image viewer) - floating and centered
+window-rule {
+    match app-id=r#"^org\.gnome\.Loupe$"#
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 700; }
+}
+
+// mpv - floating for videos
+window-rule {
+    match app-id=r#"^mpv$"#
+    open-floating true
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.6; }
+}
+
+// Swappy (screenshot editor) - floating
+window-rule {
+    match app-id=r#"^com\.gabm\.satty$"#
+    match app-id=r#"^swappy$"#
+    open-floating true
+    min-width 800
+    min-height 500
+}
+
+// Fuzzel-based file pickers - floating
+window-rule {
+    match title=r#"^Open File$"#
+    match title=r#"^Save File$"#
+    open-floating true
+}
+
+// Noctalia settings/panels - floating
+window-rule {
+    match app-id=r#"^noctalia"#
+    open-floating true
+}

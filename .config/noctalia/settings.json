@@ -8,7 +8,7 @@
         "customLaunchPrefixEnabled": false,
         "density": "default",
         "enableClipPreview": true,
-        "enableClipboardHistory": false,
+        "enableClipboardHistory": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "tabler",
@@ -42,7 +42,7 @@
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "density": "compact",
+        "density": "default",
         "displayMode": "always_visible",
         "floating": false,
         "frameRadius": 12,
@@ -73,9 +73,7 @@
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false
-                }
-            ],
-            "left": [
+                },
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
@@ -85,17 +83,19 @@
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
-                    "iconScale": 0.8,
+                    "iconScale": 0.89,
                     "id": "Workspace",
                     "labelMode": "index",
                     "occupiedColor": "secondary",
-                    "pillSize": 0.6,
+                    "pillSize": 0.65,
                     "reverseScroll": false,
                     "showApplications": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
-                },
+                }
+            ],
+            "left": [
                 {
                     "colorizeIcons": false,
                     "hideMode": "hidden",
@@ -104,7 +104,7 @@
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "textColor": "none",
-                    "useFixedWidth": false
+                    "useFixedWidth": true
                 }
             ],
             "right": [
@@ -266,6 +266,21 @@
         "enabled": false,
         "gridSnap": false,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "CPU",
+                        "x": 150,
+                        "y": 150
+                    }
+                ]
+            }
         ]
     },
     "dock": {
@@ -378,7 +393,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -415,12 +430,13 @@
     },
     "osd": {
         "autoHideMs": 2000,
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.9,
         "enabled": true,
         "enabledTypes": [
             0,
             1,
-            2
+            2,
+            3
         ],
         "location": "top_right",
         "monitors": [
@@ -435,7 +451,7 @@
         "enableCountdown": true,
         "largeButtonsLayout": "single-row",
         "largeButtonsStyle": false,
-        "position": "center",
+        "position": "top_right",
         "powerOptions": [
             {
                 "action": "lock",
@@ -540,12 +556,12 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "monitorDirectories": [
         ],
-        "overviewBlur": 0.4,
-        "overviewEnabled": false,
-        "overviewTint": 0.6,
+        "overviewBlur": 0,
+        "overviewEnabled": true,
+        "overviewTint": 0,
         "panelPosition": "follow_bar",
         "randomIntervalSec": 3600,
         "setWallpaperOnAllMonitors": true,
@@ -562,7 +578,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "aura",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

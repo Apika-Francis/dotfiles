@@ -1,0 +1,9 @@
+// Launch Noctalia using the linked name
+spawn-at-startup "qs" "-c" "noctalia"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+skip-at-startup
+}
+
