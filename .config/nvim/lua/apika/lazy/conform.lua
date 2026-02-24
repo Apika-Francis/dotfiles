@@ -26,7 +26,7 @@ return {
 			},
 			formatters = {
 				["clang-format"] = {
-					prepend_args = { "-style=file", "-fallback-style=LLVM" },
+					prepend_args = { "-style=file", "-fallback-style=LLVM"},
 				},
 			},
 		})

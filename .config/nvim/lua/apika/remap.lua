@@ -86,8 +86,6 @@ vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
 
--- Space + zig: Restarts the Language Server (LSP).
-vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 -- =============================================================================
 --  QUICKFIX NAVIGATION
