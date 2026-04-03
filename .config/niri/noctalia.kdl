@@ -35,6 +35,6 @@ recent-windows {
 }
 
 layer-rule {
-    match namespace="noctalia-wallpaper"
-    place-within-backdrop true
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
 }

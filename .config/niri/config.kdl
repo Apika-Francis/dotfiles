@@ -25,9 +25,7 @@ layout {
     gaps 4
     center-focused-column "on-overflow"
     always-center-single-column
-
-
-
+    background-color "transparent"
 
     preset-column-widths {
         proportion 0.5  // Half screen
@@ -70,7 +68,11 @@ layout {
         // inactive-color "#00000054"
     }
 }
-
+overview {                                  // 👈 added here
+    workspace-shadow {
+        off
+    }
+}
 include "windowrules.kdl"
 include "binds.kdl"
 include "startup.kdl"
