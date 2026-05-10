@@ -15,9 +15,8 @@ binds {
 
     // === NOCTALIA QUICK ACCESS ===
     Mod+Shift+L { spawn "qs" "-c" "noctalia" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Alt+V   { spawn "qs" "-c" "noctalia" "ipc" "call" "launcher" "clipboard"; }
+    Mod+C { spawn "qs" "-c" "noctalia" "ipc" "call" "launcher" "clipboard"; }
     Mod+N       { spawn "qs" "-c" "noctalia" "ipc" "call" "notifications" "toggleHistory"; }
-    Mod+Alt+E  { spawn "qs" "-c" "noctalia" "ipc" "call" "launcher" "emoji"; }
         // === TERMINAL & LAUNCHER ===
     Mod+Return { spawn "kitty"; }
     Mod+T { spawn "kitty"; }
@@ -26,8 +25,6 @@ binds {
     // 2. Fuzzel (Fast Backup) - Quick text-only search
     Mod+D { spawn "fuzzel"; }
 
-    // 1. Noctalia Launcher (Main) - Rich features, Clipboard, Settings
-    Mod+Shift+D { spawn "qs" "-c" "noctalia" "ipc" "call" "launcher" "toggle"; }
 
     // === MEDIA KEYS ===
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.5"; }
@@ -128,7 +125,7 @@ binds {
     Mod+Ctrl+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
-    Mod+C { center-column; }
+    Mod+G { center-column; }
     Mod+Alt+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
