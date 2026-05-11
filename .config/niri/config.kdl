@@ -33,7 +33,7 @@ layout {
         proportion 0.666667
     }
 
-    default-column-width { proportion 0.5;}
+    default-column-width { proportion 1.0;}
 
      preset-window-heights {
             proportion 0.5
@@ -50,7 +50,7 @@ layout {
     border {
         //off
          on
-        width 2
+        width 1
         active-color "#7aa2f7"        // Tokyo Night blue
         inactive-color "#414868"      // Tokyo Night dark gray
         urgent-color "#f7768e"        // Tokyo Night red        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"

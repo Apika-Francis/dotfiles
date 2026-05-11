@@ -15,7 +15,6 @@ binds {
 
     // === NOCTALIA QUICK ACCESS ===
     Mod+Shift+L { spawn "qs" "-c" "noctalia" "ipc" "call" "lockScreen" "lock"; }
-    Mod+C { spawn "qs" "-c" "noctalia" "ipc" "call" "launcher" "clipboard"; }
     Mod+N       { spawn "qs" "-c" "noctalia" "ipc" "call" "notifications" "toggleHistory"; }
         // === TERMINAL & LAUNCHER ===
     Mod+Return { spawn "kitty"; }
@@ -125,7 +124,7 @@ binds {
     Mod+Ctrl+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
-    Mod+G { center-column; }
+    Mod+C { center-column; }
     Mod+Alt+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
