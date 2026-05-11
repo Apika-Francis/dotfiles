@@ -18,12 +18,11 @@ binds {
     Mod+N       { spawn "qs" "-c" "noctalia" "ipc" "call" "notifications" "toggleHistory"; }
         // === TERMINAL & LAUNCHER ===
     Mod+Return { spawn "kitty"; }
-    Mod+T { spawn "kitty"; }
     Mod+Ctrl+Return { spawn "kitty" "--class=floating-kitty"; }
 
     // 2. Fuzzel (Fast Backup) - Quick text-only search
-    Mod+D { spawn "fuzzel"; }
-
+    //Mod+D { spawn "fuzzel"; }
+    Mod+D{ spawn "sh" "-c" "pkill fuzzel || fuzzel"; }
 
     // === MEDIA KEYS ===
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.5"; }
